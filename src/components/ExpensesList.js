@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import React from 'react'
 
 // our regular unconnected component
+// prensentation component
 // this component donesn't need to worry about store subscribe or getState
 const ExpenseList = (props) => (
   <div>
