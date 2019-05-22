@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import React from 'react'
 
 // our regular unconnected component
+// this component donesn't need to worry about store subscribe or getState
 const ExpenseList = (props) => (
   <div>
     <h2>Expense List</h2>
@@ -15,6 +16,7 @@ const ExpenseList = (props) => (
 
 // function expected in connect
 // as the store changes, this is automatically re-run
+// i.e. when we connect a component to a redux store, it is reactive
 const mapStateToProps = (state) => {
   return {
     expenses: state.expenses,

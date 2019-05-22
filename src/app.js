@@ -39,11 +39,11 @@ const visibleExpenses = getVisibleExpenses(
 console.log(visibleExpenses)
 
 // ReactDOM.render(<AppRouter/>, document.getElementById('app'))
+
 const jsx = ( 
   <Provider store={store}>
     <AppRouter /> 
   </Provider>
 )
-
 ReactDOM.render(jsx, document.getElementById('app'))
 
