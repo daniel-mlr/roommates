@@ -1,9 +1,9 @@
 // ExpenseList.js
 /* eslint-disable react/prop-types */
-
 import { connect } from 'react-redux'
 import React from 'react'
 import ExpenseListItem from './ExpenseListItem'
+import selectExpenses from  '../selectors/expenses'
 
 // our regular unconnected component
 // prensentation component
@@ -22,11 +22,9 @@ const ExpenseList = (props) => (
 // i.e. when we connect a component to a redux store, it is reactive
 const mapStateToProps = (state) => {
   return {
-    expenses: state.expenses,
-    filters: state.filters
+    expenses: selectExpenses(state.expenses, state.filters)
   }
 }
-
 // hoc?
 export default connect(mapStateToProps)(ExpenseList)
 // const ConnectedExpenseList = connect((state) => {

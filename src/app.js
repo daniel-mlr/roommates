@@ -4,7 +4,8 @@ import { Provider } from 'react-redux'
 import AppRouter from './routers/AppRouter'
 import configureStore from './store/configureStore'
 import { addExpense } from './actions/expenses.js'
-import { setTextFilter } from './actions/filters'
+// import { setTextFilter } from './actions/filters'
+// import { sortByAmount } from './actions/filters'
 import getVisibleExpenses from './selectors/expenses'
 
 import 'normalize.css/normalize.css'
@@ -16,21 +17,24 @@ const store = configureStore()
 // assigne deux expenses au store
 store.dispatch(addExpense({ 
   description: 'Water Bill', 
-  amount: 500, 
+  amount: 4500, 
   createdAt: 1000 
 }))
 store.dispatch(addExpense({ 
   description: 'Gaz bill', 
-  amount: 394, 
+  amount: 1000, 
+  createdAt: 5000 
+}))
+store.dispatch(addExpense({ 
+  description: 'Rent', 
+  amount: 109500, 
   createdAt: -1000 
 }))
 
-// assigne un filtre
-store.dispatch(setTextFilter('water'))
-
+// store.dispatch(sortByAmount())
 // acquisition de l'état du store
 const state = store.getState()
-console.log(state)
+// console.log('================ \nState\n', state)
 
 // affiche les résultats en fonction des expenses et des filtre assignés
 const visibleExpenses = getVisibleExpenses(
