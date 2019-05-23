@@ -3,6 +3,7 @@
 
 import { connect } from 'react-redux'
 import React from 'react'
+import ExpenseListItem from './ExpenseListItem'
 
 // our regular unconnected component
 // prensentation component
@@ -10,8 +11,9 @@ import React from 'react'
 const ExpenseList = (props) => (
   <div>
     <h2>Expense List</h2>
-    <p>{props.filters.text}</p>
-    <p>{props.expenses.length}</p>
+    {props.expenses.map((expense) => (
+      <ExpenseListItem key={expense.id} {...expense} />
+    ))}
   </div>
 )
 
