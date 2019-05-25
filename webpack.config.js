@@ -2,12 +2,13 @@
 /* global module, __dirname, require */
 
 const path = require('path')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
   entry: './src/app.js',
   // entry: './src/playground/redux-expensify.js',
-  // mode: 'development',
   mode: 'development',
+  // mode: 'production',
   output: {
     path: path.join(__dirname, 'public'),
     filename: 'bundle.js'
@@ -31,5 +32,6 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'public'),
     historyApiFallback: true
-  }
+  },
+  plugins: [ new BundleAnalyzerPlugin() ]
 }

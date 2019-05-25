@@ -15,15 +15,15 @@ import './styles/style.scss'
 const store = configureStore()
 
 // assigne deux expenses au store
-store.dispatch(addExpense({ 
-  description: 'Water Bill', 
-  amount: 4500, 
-  createdAt: 1000 
+store.dispatch(addExpense({
+  description: 'Water Bill',
+  amount: 4500,
+  createdAt: new Date(2019, 2, 5)
 }))
-store.dispatch(addExpense({ 
-  description: 'Gaz bill', 
-  amount: 1000, 
-  createdAt: 5000 
+store.dispatch(addExpense({
+  description: 'Gaz bill',
+  amount: 700,
+  createdAt: new Date(1000)
 }))
 store.dispatch(addExpense({ 
   description: 'Rent', 
@@ -37,17 +37,11 @@ const state = store.getState()
 // console.log('================ \nState\n', state)
 
 // affiche les résultats en fonction des expenses et des filtre assignés
-const visibleExpenses = getVisibleExpenses(
-  state.expenses, state.filters
+// console.log (
+getVisibleExpenses(state.expenses, state.filters)
+//)
+
+ReactDOM.render(
+  <Provider store={store}><AppRouter /></Provider>, // jsx à restituer 
+  document.getElementById('app')  // où la restitution se fait-elle
 )
-console.log(visibleExpenses)
-
-// ReactDOM.render(<AppRouter/>, document.getElementById('app'))
-
-const jsx = ( 
-  <Provider store={store}>
-    <AppRouter /> 
-  </Provider>
-)
-ReactDOM.render(jsx, document.getElementById('app'))
-
