@@ -1,11 +1,16 @@
 // filters.js
 
+// utilitaires date
+const today = new Date()
+const start_of_month = new Date(today.getFullYear(), today.getMonth())
+const end_of_month = new Date(today.getFullYear, today.getMonth() + 1, 0)
+
 // filter reducer
 const defaultFilterReducer = {
   text: '',
   sortBy: 'date',
-  startDate: undefined,
-  endDate: undefined
+  startDate: start_of_month,
+  endDate: end_of_month
 }
 export default ( state=defaultFilterReducer, action ) => {
   switch (action.type) {

@@ -29,6 +29,7 @@ module.exports = {
   },
   // enlever devtool en production
   devtool:'cheap-module-eval-source-map',
+  // devtool: 'source-map',
   devServer: {
     contentBase: path.join(__dirname, 'public'),
     historyApiFallback: true

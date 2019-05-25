@@ -63,6 +63,7 @@ export default class ExpenseForm extends React.Component {
   }
 
   onDateChange = (createdAt) => {
+    console.log('date changed  ==========')
     createdAt && this.setState( () => ({ createdAt }) )
   }
 
@@ -92,6 +93,7 @@ export default class ExpenseForm extends React.Component {
     // console.log('this.state:', this.state)
     // console.log('typeof this.state.createdAt:', typeof this.state.createdAt)
     // console.log('is Date? :', DateUtils.isDate(this.state.createdAt))
+    
     return (
       <div>
         { this.state.error && <p className="errmsg">{this.state.error}</p> }
@@ -113,7 +115,9 @@ export default class ExpenseForm extends React.Component {
             selectedDays={ this.state.createdAt }
             onDayChange={this.onDateChange}
             onFocus={(e) => console.log('je suis on focus', e)}
-            placeholder={this.state.createdAt.toString()}
+            value={this.state.createdAt}
+            // dayPickerProps={{selectedDays: this.state.createdAt}}
+            // placeholder={placeHolderDate}
           />
           <textarea
             id="" name="" cols="30" rows="5"

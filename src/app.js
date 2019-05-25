@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+// import { Render } from 'react-dom'
 import { Provider } from 'react-redux'
 import AppRouter from './routers/AppRouter'
 import configureStore from './store/configureStore'
@@ -28,7 +29,7 @@ store.dispatch(addExpense({
 store.dispatch(addExpense({ 
   description: 'Rent', 
   amount: 109500, 
-  createdAt: -1000 
+  createdAt: new Date(-1000)
 }))
 
 // store.dispatch(sortByAmount())
@@ -42,6 +43,7 @@ getVisibleExpenses(state.expenses, state.filters)
 //)
 
 ReactDOM.render(
+  // Render(
   <Provider store={store}><AppRouter /></Provider>, // jsx à restituer 
   document.getElementById('app')  // où la restitution se fait-elle
 )
