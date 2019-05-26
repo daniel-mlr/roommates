@@ -5,20 +5,17 @@ import PropTypes from 'prop-types'
 import { editExpense, removeExpense } from '../actions/expenses'
 
 const EditExpensePage = (props) => {
-  console.log('props de editExpensePage:', props)
   return (
     <div>
       <ExpenseForm
         expense={props.expense}
         onSubmit={(expense) => {
-          console.log('updated:', expense)
           props.dispatch(editExpense(props.expense.id, expense))
           props.history.push('/')
         }}
       />
       <button 
         onClick={ () => {
-          console.log('remove id: ', props.expense.id)
           props.dispatch(removeExpense( { id: props.expense.id } ))
           props.history.push('/')
         }}
