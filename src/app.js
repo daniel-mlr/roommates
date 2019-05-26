@@ -1,6 +1,6 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-// import { Render } from 'react-dom'
+// import ReactDOM from 'react-dom'
+import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import AppRouter from './routers/AppRouter'
 import configureStore from './store/configureStore'
@@ -42,8 +42,8 @@ const state = store.getState()
 getVisibleExpenses(state.expenses, state.filters)
 //)
 
-ReactDOM.render(
-  // Render(
+// ReactDOM.render(
+render(
   <Provider store={store}><AppRouter /></Provider>, // jsx à restituer 
   document.getElementById('app')  // où la restitution se fait-elle
 )

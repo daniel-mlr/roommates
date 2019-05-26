@@ -9,7 +9,8 @@ import PropTypes from 'prop-types'
 import DayPickerInput from 'react-day-picker/DayPickerInput'
 import 'react-day-picker/lib/style.css'
 
-import { DateUtils } from 'react-day-picker'
+// import { DateUtils } from 'react-day-picker'
+
 // const test1 =   format(new Date(), 'dddd MMMM Do, YYYY')
 // //=> "Today is a Thursday"
 // const test2 = distanceInWords(subDays(new Date(), 3), new Date())
@@ -61,7 +62,6 @@ export default class ExpenseForm extends React.Component {
     if (!amount || amount.match(/^\d{1,}(\.\d{0,2})?$/))
       this.setState( () => ({ amount }) )
   }
-
   onDateChange = (createdAt) => {
     console.log('date changed  ==========')
     createdAt && this.setState( () => ({ createdAt }) )

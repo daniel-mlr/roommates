@@ -10,7 +10,7 @@ const ExpenseListItem = ({id, description, amount, createdAt} ) => (
       <h4>{description}</h4>
     </Link>
     <p>
-      <span>{amount}</span>--- <span>{createdAt.toString()}</span>
+      <span>${(amount / 100).toFixed(2) }</span>--- <span>{createdAt.toDateString()}</span>
     </p>
   </div>
 )

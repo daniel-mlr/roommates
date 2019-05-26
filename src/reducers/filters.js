@@ -3,7 +3,7 @@
 // utilitaires date
 const today = new Date()
 const start_of_month = new Date(today.getFullYear(), today.getMonth())
-const end_of_month = new Date(today.getFullYear, today.getMonth() + 1, 0)
+const end_of_month = new Date(today.getFullYear(), today.getMonth() + 1, 0)
 
 // filter reducer
 const defaultFilterReducer = {
