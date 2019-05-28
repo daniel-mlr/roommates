@@ -1,5 +1,4 @@
 // ExpensesListFilters.js
-/* eslint-disable react/prop-types */
 // basic presentational component
 //
 // voir ExpenseList.js pour logique de connection semblable
@@ -22,7 +21,7 @@ import 'react-day-picker/lib/style.css'
 // const modifiers = { start: from, end: to };
 
 const ExpenseListFilters = (props) => (
-  // on a maaintenant acces à state.filters grace à mapStateToProps ci-bas
+  // on a maintenant acces à state.filters grace à mapStateToProps ci-bas
   <div>
     <input
       type="text"

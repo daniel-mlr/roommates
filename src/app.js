@@ -15,6 +15,7 @@ import './styles/style.scss'
 // instantiation d'un store
 const store = configureStore()
 
+console.log('testing')
 // assigne deux expenses au store
 store.dispatch(addExpense({
   description: 'Water Bill',

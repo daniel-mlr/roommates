@@ -9,17 +9,6 @@ import PropTypes from 'prop-types'
 import DayPickerInput from 'react-day-picker/DayPickerInput'
 import 'react-day-picker/lib/style.css'
 
-// import { DateUtils } from 'react-day-picker'
-
-// const test1 =   format(new Date(), 'dddd MMMM Do, YYYY')
-// //=> "Today is a Thursday"
-// const test2 = distanceInWords(subDays(new Date(), 3), new Date())
-// //=> "3 days ago"
-// console.log('test1', test1, 'test2', test2)
-
-// formatRelative(subDays(new Date(), 3), new Date())
-//=> "last Friday at 7:26 p.m."
-
 // utilisation de "local component state" pour
 // tracer l'état des différents input
   
@@ -78,7 +67,6 @@ export default class ExpenseForm extends React.Component {
         description: this.state.description,
         amount: parseFloat(this.state.amount, 10) * 100,
         createdAt: this.state.createdAt,
-        //createdAt: this.state.createdAt,
         note: this.state.note
       })
     } else {
