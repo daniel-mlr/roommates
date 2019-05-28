@@ -1,17 +1,10 @@
 // ExpenseForm.js
-
 import React from 'react'
 import PropTypes from 'prop-types'
-// import { format, distanceInWords, subDays } from 'date-fns'
-// import TinyDatePicker from 'tiny-date-picker'
-// import 'tiny-date-picker/tiny-date-picker.css'
-// import DayPicker from 'react-day-picker'
 import DayPickerInput from 'react-day-picker/DayPickerInput'
-import 'react-day-picker/lib/style.css'
 
 // utilisation de "local component state" pour
 // tracer l'état des différents input
-  
 export default class ExpenseForm extends React.Component {
   // The state contains data specific to this component that
   // may change over time. The state is user-defined, and it
@@ -52,18 +45,14 @@ export default class ExpenseForm extends React.Component {
       this.setState( () => ({ amount }) )
   }
   onDateChange = (createdAt) => {
-    console.log('date changed  ==========')
     createdAt && this.setState( () => ({ createdAt }) )
   }
 
   onSubmit = (e) => {
     e.preventDefault()
-    // this.state.description && this.state.amount
-    //   ? this.setState( () => ({error: ''}) )
-    //   : this.setState( () => ({error: 'Fields Description and Amount must not be empty'}) )
     if (this.state.description && this.state.amount) {
       this.setState( () => ({error: ''}) )
-      this.props.onSubmit({ // eslint-disable-line
+      this.props.onSubmit({
         description: this.state.description,
         amount: parseFloat(this.state.amount, 10) * 100,
         createdAt: this.state.createdAt,
@@ -72,15 +61,11 @@ export default class ExpenseForm extends React.Component {
     } else {
       this.setState( () => ({error: 'Fields Description and Amount must not be empty'}) )
     }
-
   }
  
   render() {
-    // pour input, on définit type=text  plutot que type=number
-    // car on crée notre propre validation (max 2 décimales)
-    // console.log('this.state:', this.state)
-    // console.log('typeof this.state.createdAt:', typeof this.state.createdAt)
-    // console.log('is Date? :', DateUtils.isDate(this.state.createdAt))
+    // pour input de Amount, on définit type=text plutot que type=number car on
+    // crée notre propre validation (max 2 décimales)
     
     return (
       <div>
@@ -122,5 +107,6 @@ export default class ExpenseForm extends React.Component {
 }
 
 ExpenseForm.propTypes = {
-  expense: PropTypes.object
+  expense: PropTypes.object,
+  onSubmit: PropTypes.func
 } 

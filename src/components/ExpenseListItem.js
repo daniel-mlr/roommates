@@ -1,5 +1,4 @@
 // ExpenseListItem.js
-// /* eslint-disable react/prop-types */
 import React from 'react'
 import {Link} from 'react-router-dom'
 import PropTypes from 'prop-types'
@@ -18,7 +17,7 @@ ExpenseListItem.propTypes = {
   id: PropTypes.string,
   description: PropTypes.string,
   amount: PropTypes.number,
-  createdAt: PropTypes.object
+  createdAt: PropTypes.instanceOf(Date)
 } 
 
 export default ExpenseListItem

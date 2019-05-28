@@ -1,7 +1,7 @@
 // ExpenseList.js
-/* eslint-disable react/prop-types */
 import { connect } from 'react-redux'
 import React from 'react'
+import PropTypes from 'prop-types'
 import ExpenseListItem from './ExpenseListItem'
 import selectExpenses from  '../selectors/expenses'
 
@@ -25,8 +25,12 @@ const mapStateToProps = (state) => {
     expenses: selectExpenses(state.expenses, state.filters)
   }
 }
+ExpenseList.propTypes = {
+  expenses: PropTypes.object
+}
 // hoc?
 export default connect(mapStateToProps)(ExpenseList)
+// avant:
 // const ConnectedExpenseList = connect((state) => {
 // export default connect((state) => {
 //   return {

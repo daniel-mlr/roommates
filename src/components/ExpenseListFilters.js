@@ -3,11 +3,11 @@
 //
 // voir ExpenseList.js pour logique de connection semblable
 import React from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { setTextFilter, sortByDate, sortByAmount, setStartDate, setEndDate } from '../actions/filters'
 
 import DayPickerInput from 'react-day-picker/DayPickerInput'
-import 'react-day-picker/lib/style.css'
 
 // helpers function per http://react-day-picker.js.org/examples/selected-range<Paste>
 // const getInitialState = () => {
@@ -28,7 +28,6 @@ const ExpenseListFilters = (props) => (
       value={props.filters.text}
       onChange={(e) => (
         props.dispatch(setTextFilter(e.target.value))
-        // console.log(e.target.value)
       )}
     />
 
@@ -69,5 +68,10 @@ const mapStateToProps = (state) => {
     filters: state.filters
   }
 }
+
+ExpenseListFilters.propTypes = {
+  dispatch: PropTypes.func,
+  filters: PropTypes.object
+} 
 
 export default connect(mapStateToProps)(ExpenseListFilters)

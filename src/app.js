@@ -4,34 +4,35 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import AppRouter from './routers/AppRouter'
 import configureStore from './store/configureStore'
-import { addExpense } from './actions/expenses.js'
+// import { addExpense } from './actions/expenses.js'
 // import { setTextFilter } from './actions/filters'
 // import { sortByAmount } from './actions/filters'
 import getVisibleExpenses from './selectors/expenses'
 
 import 'normalize.css/normalize.css'
 import './styles/style.scss'
+import 'react-day-picker/lib/style.css'
 
 // instantiation d'un store
 const store = configureStore()
 
-console.log('testing')
-// assigne deux expenses au store
-store.dispatch(addExpense({
-  description: 'Water Bill',
-  amount: 4500,
-  createdAt: new Date(2019, 2, 5)
-}))
-store.dispatch(addExpense({
-  description: 'Gaz bill',
-  amount: 700,
-  createdAt: new Date(1000)
-}))
-store.dispatch(addExpense({ 
-  description: 'Rent', 
-  amount: 109500, 
-  createdAt: new Date(-1000)
-}))
+// console.log('testing')
+// // assigne deux expenses au store
+// store.dispatch(addExpense({
+//   description: 'Water Bill',
+//   amount: 4500,
+//   createdAt: new Date(2019, 2, 5)
+// }))
+// store.dispatch(addExpense({
+//   description: 'Gaz bill',
+//   amount: 700,
+//   createdAt: new Date(1000)
+// }))
+// store.dispatch(addExpense({ 
+//   description: 'Rent', 
+//   amount: 109500, 
+//   createdAt: new Date(-1000)
+// }))
 
 // store.dispatch(sortByAmount())
 // acquisition de l'état du store
