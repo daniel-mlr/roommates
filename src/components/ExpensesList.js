@@ -26,7 +26,7 @@ const mapStateToProps = (state) => {
   }
 }
 ExpenseList.propTypes = {
-  expenses: PropTypes.object
+  expenses: PropTypes.array
 }
 // hoc?
 export default connect(mapStateToProps)(ExpenseList)
