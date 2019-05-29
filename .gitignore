@@ -61,8 +61,6 @@ typings/
 .env
 
 # dm Wed 22 May 2019 01:29:32 AM PDT
-public/bundle*
 Session.vim
 *.ico
-public/styles.css.map
-public/styles.css
+public/dist/
