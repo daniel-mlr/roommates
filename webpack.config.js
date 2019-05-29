@@ -5,7 +5,7 @@
 // access to import, so we use require
 const path = require('path')
 // const ExtractTextPlugin =require('extract-text-webpack-plugin')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 // uglify et optimize, voir note plus bas
 // const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
@@ -33,8 +33,8 @@ module.exports = (env) => {
     // },
     entry: './src/app.js',
     // entry: './src/playground/redux-expensify.js',
-    // mode: isProduction ? 'production' : 'development',
-    mode: 'development',
+    mode: isProduction ? 'production' : 'development',
+    // mode: 'development',
     output: {
       path: path.join(__dirname, 'public'),
       filename: 'bundle.js'
@@ -68,7 +68,7 @@ module.exports = (env) => {
       }]
     },
     plugins: [ 
-      new BundleAnalyzerPlugin(),
+      // new BundleAnalyzerPlugin(),  // cause probleme avec MiniCssExtractPlugin
       new MiniCssExtractPlugin({ filename: 'styles.css', })
     ],
     // 'source map' crée un bundle séparé, utilisé seulement si l'usager
