@@ -7,8 +7,9 @@ const path = require('path')
 // const ExtractTextPlugin =require('extract-text-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+// uglify et optimize, voir note plus bas
+// const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+// const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 // on exporte une fonction plutot qu'un objet, ce qui nous permet 
 // de passer des arguments
@@ -18,20 +19,22 @@ module.exports = (env) => {
   // styles.css sera le conteneur de nos styles
   // const CSSExtract = new ExtractTextPlugin('styles.css')
   return {
-    optimization: {
-      minimizer: [
-        new UglifyJsPlugin({
-          cache: true,
-          parallel: true,
-          sourceMap: false
-        }),
-        new OptimizeCSSAssetsPlugin({})
-      ]
-    },
+    // L'optimisation empêche la génération des fichiers map, et
+    // n'optimise pas grand chose, à vrai dire!
+    // optimization: {
+    //   minimizer: [
+    //     new UglifyJsPlugin({
+    //       cache: true,
+    //       parallel: true,
+    //       sourceMap: false
+    //     }),
+    //     new OptimizeCSSAssetsPlugin({})
+    //   ]
+    // },
     entry: './src/app.js',
     // entry: './src/playground/redux-expensify.js',
+    // mode: isProduction ? 'production' : 'development',
     mode: 'development',
-    // mode: 'production',
     output: {
       path: path.join(__dirname, 'public'),
       filename: 'bundle.js'

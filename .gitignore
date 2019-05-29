@@ -64,3 +64,5 @@ typings/
 public/bundle*
 Session.vim
 *.ico
+public/styles.css.map
+public/styles.css

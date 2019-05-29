@@ -1,5 +1,19 @@
 {
-    "editor.fontSize": 12,
-    "material-icon-theme.activeIconPack": "react",
-    "vim.useSystemClipboard": true
+  "editor.fontSize": 12,
+  "material-icon-theme.activeIconPack": "react",
+  "vim.useSystemClipboard": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": [ "j", "j" ],
+      "after": [ "<esc>" ]
+    }, 
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [ "q" ],
+      "commands": [ ":q" ]
+    }
+  ],
+  "debug.console.fontSize": 12,
+  "markdown.preview.fontSize": 12
 }
