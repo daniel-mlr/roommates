@@ -4,11 +4,13 @@
   "description": "App for roommates expenses and duties",
   "main": "app.js",
   "scripts": {
+    "start": "node server/server.js",
     "serve": "live-server public/",
     "build:dev": "webpack",
     "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server",
-    "test": "jest"
+    "test": "jest",
+    "heroku-postbuild": "npm run build:prod"
   },
   "author": "Daniel Meilleur <daniel.meilleur@gmail.com>",
   "license": "ISC",
